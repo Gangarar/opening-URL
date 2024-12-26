@@ -1,0 +1,43 @@
+<html>
+<body>
+    <div>
+    <label>Url:</label>
+    <input id="urelf" type="url"/>
+    </div>
+    <script>
+
+    function yourl(){
+        const yrl = document.querySelector("#urelf");
+        window.open(yrl);
+    }
+    </script>
+    <button onclick="yourl()">Open Url!</button>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Open URL Example</title>
+</head>
+<body>
+    <div>
+        <label>Url:</label>
+        <input id="urelf" type="url" placeholder="Enter URL here"/>
+    </div>
+    <button onclick="yourl()">Open Url!</button>
+
+    <script>
+        function yourl() {
+            const yrl = document.querySelector("#urelf").value; // Get the value of the input field
+            if (yrl) {
+                // Check if the URL starts with http:// or https://
+                const protocolPattern = /^https?:\/\//i;
+                const url = protocolPattern.test(yrl) ? yrl : 'https://' + yrl;
+                window.open(url, "_blank"); // Open the URL in a new tab
+            } else {
+                alert("Please enter a valid URL."); // Alert if the input is empty
+            }
+        }
+    </script>
+</body>
+</html>
